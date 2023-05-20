@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Abbas Blog</title>
+    
+    <style>
+        * {
+           font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #container {
+            display: flex;
+            height: 100vh;
+        }
+
+        #left {
+            height: 100vh;
+            position: fixed;
+  width: 20%;
+  background-color: #F5F5F5;
+  overflow: hidden;
+  
+ 
+            
+        }
+
+        #right {
+            margin-left: 20%;
+  width: 80%;
+  background-color: #FFFFFF;
+  overflow-y: scroll;
+  height: 200vh;
+        }
+
+        #header {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #header h1 {
+            font-weight: bold;
+            font-size: 24px;
+            color: black;
+        }
+
+        #secenek {
+            margin-top: 10px;
+            color: #A0A0A0;
+            text-align: center;
+        }
+
+        #secenek     ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 80px;
+        }
+
+        #secenek ul li {
+            margin-bottom: 10px;
+            margin-top: 30px;
+            text-decoration: solid black 2px;
+        }
+
+        #secenek ul li a {
+            color: #A0A0A0;
+            text-decoration: none;
+        }
+
+        #secenek ul li a:hover {
+           
+            color: black;
+            transition: 2s;
+        }
+
+        #icons {
+            margin-top: 100%;
+            text-align: center;
+        }
+
+        #icons img {
+            width: 20px;
+            margin-right: 5px;
+        }
+
+        #content {
+            text-align: center;
+            padding: 30px;
+        }
+
+        #content img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+
+        #content h2 {
+            font-weight: bold;
+            font-size: 30px;
+            color: black;
+            margin-top: 20px;
+        }
+
+        #content p {
+            font-size: 20px;
+            color: #A0A0A0;
+            width: 50%;
+            margin: 50px auto ;
+            
+        }
+        .calculator {
+            color: black;
+            background-color: black;
+            width: 25%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+    
+
+        button {
+            margin: 5px;
+            border-radius: 20px;
+            width: 3%;
+            padding: 10px;
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body>
+<div id="container">
+<div id="left">
+<div id="header">
+<h1>Abbas </h1>
+</div>
+<div id="secenek">
+<ul>
+    <strong>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Photography</a></li>
+    <li><a href="#">Travel</a></li>
+    <li><a href="#">Fashion</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+    </strong>
+        </ul>
+            </div>
+            <div id="icons">
+                <a href="https://www.instagram.com/abbas___a___/?next=%2F" target="_blank"><img src="insta.svg" alt="Instagram"> </a>
+             <a href="#" target="_blank">  <img src="link.svg" alt="linkedin"></a> 
+             <a href="https://github.com/Abbas2004mamedov" target="_blank">  <img src="git.svg" alt="github"></a>
+            </div>
+        </div>
+        <div id="right">
+            <div id="content">
+                <img src="sekil.png" alt="Kişi Fotoğrafı">
+                <h2>Abbas Mamedov</h2>
+                <p>Salam. mən , Abbas Mamedov  Azərbaycan Texniki Universitetində təhsil alıram.</p>
+        
+            <div id="calculator">
+                <div id="result"></div>
+                <h2>Kalkulyator</h2>
+                <button class="button" onclick="appendValue('7')">7</button>
+                <button class="button" onclick="appendValue('8')">8</button>
+                <button class="button" onclick="appendValue('9')">9</button>
+                <button class="button" onclick="appendValue('+')">+</button>
+                <br>
+                <button class="button" onclick="appendValue('4')">4</button>
+                <button class="button" onclick="appendValue('5')">5</button>
+                <button class="button" onclick="appendValue('6')">6</button>
+                <button class="button" onclick="appendValue('-')">-</button>
+                <br>
+                <button class="button" onclick="appendValue('1')">1</button>
+                <button class="button" onclick="appendValue('2')">2</button>
+                <button class="button" onclick="appendValue('3')">3</button>
+                <button class="button" onclick="appendValue('*')">*</button>
+                <br>
+                <button class="button" onclick="appendValue('0')">0</button>
+                <button class="button" onclick="appendValue('.')">.</button>
+                <button class="button" onclick="calculate()">=</button>
+                <button class="button" onclick="appendValue('/')">/</button>
+                <br>
+                <button class="button" onclick="clearDisplay()">C</button>
+            </div>
+        
+            <script>
+                function appendValue(value) {
+                    document.getElementById('result').innerText += value;
+                }
+        
+                function calculate() {
+                    var result = eval(document.getElementById('result').innerText);
+                    document.getElementById('result').innerText = result;
+                }
+        
+                function clearDisplay() {
+                    document.getElementById('result').innerText = '';
+                }
+            </script>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
